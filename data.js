@@ -26,7 +26,12 @@ window.translations = {
     fullName: "पूरा नाम", aadhaar: "आधार", mobile: "मोबाइल नंबर",
     address: "पता", age: "आयु", income: "आय", submit: "आवेदन जमा करें",
     successMsg: "✅ आवेदन सबमिट हो गया! कंसोल देखें।",
-  },
+    },
+  kannada: {
+    home: "ಮುಖಪುಟ", govtSchemes: "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು", scholarships: "ವಿದ್ಯಾರ್ಥಿವೇತನ",
+    pensions: "ಪಿಂಚಣಿ", farmerBenefits: "ರೈತರ ಪ್ರಯೋಜನಗಳು", fullName: "ಪೂರ್ಣ ಹೆಸರು",
+    aadhaar: "ಆಧಾರ್", mobile: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ", submit: "ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
+    },
   bengali: {
     home: "হোম", govtSchemes: "সরকারি প্রকল্প", scholarships: "বৃত্তি",
     pensions: "পেনশন", farmerBenefits: "কৃষক সুবিধা", examDetails: "পরীক্ষার বিবরণ",
@@ -52,11 +57,6 @@ window.translations = {
   gujarati: {
     home: "હોમ", govtSchemes: "સરકારી યોજનાઓ", pensions: "પેન્શન",
     fullName: "પૂરું નામ", aadhaar: "આધાર", submit: "અરજી સબમિટ કરો",
-  },
-  kannada: {
-    home: "ಮುಖಪುಟ", govtSchemes: "ಸರ್ಕಾರಿ ಯೋಜನೆಗಳು", scholarships: "ವಿದ್ಯಾರ್ಥಿವೇತನ",
-    pensions: "ಪಿಂಚಣಿ", farmerBenefits: "ರೈತರ ಪ್ರಯೋಜನಗಳು", fullName: "ಪೂರ್ಣ ಹೆಸರು",
-    aadhaar: "ಆಧಾರ್", mobile: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ", submit: "ಅರ್ಜಿ ಸಲ್ಲಿಸಿ",
   },
   malayalam: {
     home: "ഹോം", govtSchemes: "സർക്കാർ പദ്ധതികൾ", pensions: "പെൻഷൻ",

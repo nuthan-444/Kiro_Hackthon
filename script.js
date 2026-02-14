@@ -25,7 +25,7 @@
   }
 
   function renderLanguagePage() {
-    const langList = ['english','hindi','bengali','telugu','marathi','tamil','gujarati','kannada','malayalam','punjabi'];
+    const langList = ['english','kannada','hindi','bengali','telugu','marathi','tamil','gujarati','malayalam','punjabi'];
     return `<div class="lang-page">` + langList.map(l => `
       <div class="lang-btn" data-lang="${l}">
         <span>${l.toUpperCase()}</span>
@@ -49,8 +49,8 @@
         const lang = sp.dataset.lang;
         // Speak the language name in that language (using a simple map)
         const langNameMap = {
-          english:'English', hindi:'हिन्दी', bengali:'বাংলা', telugu:'తెలుగు',
-          marathi:'मराठी', tamil:'தமிழ்', gujarati:'ગુજરાતી', kannada:'ಕನ್ನಡ',
+          english:'English', kannada:'ಕನ್ನಡ', hindi:'हिन्दी', bengali:'বাংলা', telugu:'తెలుగు',
+          marathi:'मराठी', tamil:'தமிழ்', gujarati:'ગુજરાતી', 
           malayalam:'മലയാളം', punjabi:'ਪੰਜਾਬੀ'
         };
         speakText(langNameMap[lang] || lang, lang); // use selected language for voice
@@ -221,7 +221,7 @@
   }
 
   function getLangCode(lang) {
-    const map = { english:'en-IN', hindi:'hi-IN', bengali:'bn-IN', telugu:'te-IN', marathi:'mr-IN', tamil:'ta-IN', gujarati:'gu-IN', kannada:'kn-IN', malayalam:'ml-IN', punjabi:'pa-IN' };
+    const map = { english:'en-IN', kannada:'kn-IN', hindi:'hi-IN', bengali:'bn-IN', telugu:'te-IN', marathi:'mr-IN', tamil:'ta-IN', gujarati:'gu-IN', malayalam:'ml-IN', punjabi:'pa-IN' };
     return map[lang] || 'en-IN';
   }
 
