@@ -3,314 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
-  <title>🌾 Multilingual Smart Government Assistant</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <title>🇮🇳 Multilingual Smart Government Assistant</title>
 
-    body {
-      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
-      background: #f1f9f0;  /* soft rural green */
-      color: #1e3c2c;
-      min-height: 100vh;
-      padding: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+  <link rel="stylesheet" href="style.css">
 
-    .app-container {
-      max-width: 800px;
-      width: 100%;
-      background: white;
-      border-radius: 48px 48px 32px 32px;
-      box-shadow: 0 20px 40px rgba(0, 40, 0, 0.2);
-      overflow: hidden;
-      padding: 24px 20px 32px;
-      border: 2px solid #ffe28f; /* warm accent */
-    }
-
-    /* top bar */
-    .top-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .lang-indicator {
-      background: #ffeec2;
-      padding: 8px 18px;
-      border-radius: 60px;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: 2px solid #c7a44b;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 8px;
-    }
-
-    .nav-btn {
-      background: #d0e6cd;
-      border: none;
-      font-size: 1.4rem;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: bold;
-      border: 2px solid #5f8b4b;
-      cursor: pointer;
-      box-shadow: 0 4px 0 #3f5e32;
-      transition: 0.05s linear;
-    }
-
-    .nav-btn:active {
-      transform: translateY(4px);
-      box-shadow: none;
-    }
-
-    /* BIG BUTTONS */
-    .grid-large {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .card-btn {
-      background: #fefbe6;
-      border: 4px solid #cc8b1f;
-      border-radius: 50px;
-      padding: 18px 22px;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      box-shadow: 0 8px 0 #a5660e;
-      cursor: pointer;
-      transition: 0.05s linear;
-      width: 100%;
-    }
-
-    .card-btn:active {
-      transform: translateY(6px);
-      box-shadow: 0 2px 0 #a5660e;
-    }
-
-    .card-icon {
-      font-size: 3.2rem;
-      background: #ffeeb5;
-      width: 80px;
-      height: 80px;
-      border-radius: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 3px solid #b3801a;
-    }
-
-    .card-text {
-      flex: 1;
-      font-size: 2rem;
-      font-weight: bold;
-      text-align: left;
-      line-height: 1.2;
-    }
-
-    .speaker-mini {
-      font-size: 2.2rem;
-      background: #c2e0ff;
-      border: 3px solid #2a6f97;
-      border-radius: 60px;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 5px 0 #194a66;
-      transition: 0.02s;
-      flex-shrink: 0;
-    }
-
-    .speaker-mini:active {
-      transform: translateY(5px);
-      box-shadow: none;
-    }
-
-    /* language page */
-    .lang-page {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .lang-btn {
-      background: #ffd966;
-      border: 5px solid #b6710e;
-      border-radius: 80px;
-      padding: 28px 30px;
-      font-size: 2.8rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 10px 0 #9e6200;
-      cursor: pointer;
-    }
-
-    .lang-btn:active {
-      transform: translateY(8px);
-      box-shadow: 0 2px 0 #9e6200;
-    }
-
-    /* category section cards */
-    .section-card {
-      background: #e6f0da;
-      border-radius: 40px;
-      padding: 18px;
-      margin-bottom: 24px;
-      border: 3px solid #486b3a;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .content-box {
-      background: white;
-      border-radius: 30px;
-      padding: 20px;
-      font-size: 1.6rem;
-      border: 2px solid #ba9b4b;
-      margin: 10px 0;
-      line-height: 1.4;
-    }
-
-    /* form */
-    .form-group {
-      margin-bottom: 24px;
-    }
-
-    .form-label {
-      font-size: 1.8rem;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      margin-bottom: 8px;
-    }
-
-    .input-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .input-field {
-      flex: 1;
-      font-size: 1.6rem;
-      padding: 18px 22px;
-      border-radius: 60px;
-      border: 3px solid #bc8b3c;
-      background: #fff9e6;
-      min-width: 200px;
-    }
-
-    .mic-btn {
-      background: #90d26d;
-      border: 3px solid #1f5e2d;
-      border-radius: 60px;
-      width: 70px;
-      height: 70px;
-      font-size: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 5px 0 #1b4d26;
-    }
-
-    .mic-btn:active {
-      transform: translateY(5px);
-      box-shadow: none;
-    }
-
-    .submit-btn {
-      background: #fea82f;
-      border: none;
-      font-size: 2.5rem;
-      padding: 20px 30px;
-      border-radius: 80px;
-      font-weight: bold;
-      border: 4px solid #96400e;
-      box-shadow: 0 8px 0 #96400e;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .submit-btn:active {
-      transform: translateY(8px);
-      box-shadow: none;
-    }
-
-    .success-msg {
-      background: #b6d7a8;
-      border-radius: 40px;
-      padding: 20px;
-      font-size: 1.8rem;
-      text-align: center;
-      border: 3px solid #1f5e2d;
-      margin: 20px 0 0;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    *:focus-visible {
-      outline: 6px solid #f3a13b;
-    }
-
-    /* high contrast & rural */
-    button, [role="button"] {
-      user-select: none;
-      touch-action: manipulation;
-    }
-
-    @media (max-width: 500px) {
-      .card-text { font-size: 1.5rem; }
-      .lang-btn { font-size: 2.2rem; }
-    }
-  </style>
 </head>
+
+
+
 <body>
 <div class="app-container" id="appContainer">
-  <!-- top navigation -->
   <div class="top-bar">
-    <div class="lang-indicator" id="currentLangLabel">🌍 English</div>
+    <div class="lang-indicator" id="currentLangLabel">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231d3e1d'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/%3E%3C/svg%3E" class="icon-img" alt="lang"> English
+    </div>
     <div class="nav-buttons">
-      <button class="nav-btn" id="homeBtn" aria-label="home">🏠</button>
-      <button class="nav-btn" id="backBtn" aria-label="back">🔙</button>
+      <button class="nav-btn" id="homeBtn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231d3e1d'%3E%3Cpath d='M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z'/%3E%3C/svg%3E" class="icon-img" alt="home">🏠</button>
+      <button class="nav-btn" id="backBtn"><img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231d3e1d'%3E%3Cpath d='M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z'/%3E%3C/svg%3E" class="icon-img" alt="back">🔙</button>
     </div>
   </div>
-
-  <!-- page content dynamically replaced -->
   <div id="pageContent"></div>
 </div>
 
-<!-- data.js will be injected via inline script (acting as separate module) -->
+
+
+<script src="data.js"></script>
 <script src="script.js"></script>
+
+
+
 </body>
 </html>
