@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub-Schemes - Smart Government Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Hind:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-content">
+            <button class="icon-btn back-btn" id="backBtn" aria-label="Back">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M19 12H5M12 19l-7-7 7-7'/%3E%3C/svg%3E" alt="Back">
+            </button>
+            <h1 class="header-title" id="categoryTitle">Category</h1>
+            <button class="icon-btn home-btn" id="homeBtn" aria-label="Home">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2'%3E%3Cpath d='M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z'/%3E%3Cpolyline points='9 22 9 12 15 12 15 22'/%3E%3C/svg%3E" alt="Home">
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="subSchemesList" class="schemes-list">
+            <!-- Sub-schemes will be generated here -->
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="subschemes.js"></script>
+</body>
+</html>
